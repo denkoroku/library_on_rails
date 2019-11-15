@@ -1,0 +1,50 @@
+<div class="erb_content">
+    <h2>Books </h2>
+    <hr />
+
+    <table>
+      <tr>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Published Date</th>
+        <th>Bought Date</th>
+        <th>Bought Price</th>
+        <th>On Loan?</th>
+
+      </tr>
+      <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+        <td><%= book.published_date %></td>
+        <td><%= book.bought_date %></td>
+        <td><%= book.price %></td>
+        <td><%= book.onloan %></td>
+
+        <td><a href="/admin/list_books/<%= book.id %>">edit</a></td>
+      </tr>
+      <% end %>
+    </table>
+
+    <div class="form_button3">
+      <a class="align_center" href="/admin/new_book">Add New Book</a>
+    </div>
+    <hr />
+    <div class="form-el">
+    <form class="" action="" method="post">
+      <label for="topic_select">Select Topic for Filter:</label>
+
+      <select class= "form_button2" name="topic_id" id="topic_select">
+        <% @topics.each do |topic| %>
+        <option class="topic_select" name="<%= topic.topic %>"value="<%= topic.id %>"> <%= topic.topic %></option>
+        <% end %>
+      </select>
+
+      <input class= "form_button2" type="submit" value="Filter">
+    </form>
+
+      </div>
+
+    </div>
+
+</div>
