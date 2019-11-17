@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= f.label :price %>
-    <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: '£'), step: :any%>
+    <%= f.number_field :price, value: number_to_currency(f.object.price.to_f, delimiter: '', unit: ''), step: 0.01%>
 
   </div>
 
