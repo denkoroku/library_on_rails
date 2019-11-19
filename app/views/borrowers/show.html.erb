@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @borrower.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @borrower.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @borrower.email %>
+</p>
+
+<%= link_to 'Edit', edit_borrower_path(@borrower) %> |
+<%= link_to 'Back', borrowers_path %>

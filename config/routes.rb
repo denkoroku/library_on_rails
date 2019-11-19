@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :borrowers
   resources :books
   devise_for :users, :controllers => {:registrations => "registrations"}
   root to: 'pages#index'
