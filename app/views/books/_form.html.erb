@@ -37,6 +37,20 @@
     <%= f.number_field :published_date %>
   </div>
 
+
+<div>
+  <% Topic.all.each do |topic| %>
+    <% hidden_field_tag "book[topic_ids][]", nil %>
+    <%= 
+      check_box_tag "book[topic_ids][]",
+      topic.id,
+      @book.topic_ids.include?(topic.id),
+      id: dom_id(topic)
+     %>
+     <%= label_tag dom_id(topic), topic.topic %><br>
+  <% end %>
+</div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
