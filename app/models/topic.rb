@@ -1,4 +1,4 @@
 class Topic < ApplicationRecord
-    has_many :topicifications
-    has_many :books, through: :topicifications
+    has_many :topifications
+    has_many :books, through: :topifications
 end

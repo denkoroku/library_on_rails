@@ -1,0 +1,3 @@
+class TopificationsController < ApplicationController
+
+end

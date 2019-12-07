@@ -39,9 +39,10 @@
 
 
 <div>
+<% hidden_field_tag "book[topic_ids][]", nil %>
   <% Topic.all.each do |topic| %>
-    <% hidden_field_tag "book[topic_ids][]", nil %>
-    <%= 
+
+    <%=
       check_box_tag "book[topic_ids][]",
       topic.id,
       @book.topic_ids.include?(topic.id),
